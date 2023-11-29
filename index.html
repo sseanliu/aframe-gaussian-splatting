@@ -6,12 +6,15 @@
   </head>
   <body>
     <a-scene renderer="antialias: false" stats>
+      <a-assets>
+        <a-asset-item id="tree" src="https://huggingface.co/SeanLiu/splat/resolve/main/lxa.glb"></a-asset-item>
+      </a-assets>
       <a-entity position="0 1.6 -2.0" animation="property: rotation; to: 0 360 0; dur: 10000; easing: linear; loop: true">
         <a-sphere position="0 0 0.5" radius="0.5" color="#EF2D5E"></a-sphere>
         <a-sphere position="0 0 -0.5" radius="0.5" color="#EF2D5E"></a-sphere>
       </a-entity>
       <a-entity gaussian_splatting="src: https://huggingface.co/SeanLiu/splat/resolve/main/gs_Ava.splat;" rotation="0 0 0" position="0 1.5 -2"></a-entity>
-      <a-entity gltf-model="src: https://huggingface.co/SeanLiu/splat/resolve/main/lxa.glb;" rotation="0 0 0" position="0 1.5 -2"></a-entity>
+      <a-entity gltf-model="#tree"></a-entity>
       <a-sky color="#000"></a-sky>
     </a-scene>
   </body>
